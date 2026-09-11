@@ -31,7 +31,7 @@ export default function ITView() {
         <h2>Dự án</h2>
         <div className="grid-cards">
           {itProjects.map((p, i) => (
-            <Reveal key={p.title} delay={i * 0.06} y={18}>
+            <Reveal className="grid-cards-item" key={p.title} delay={i * 0.06} y={18}>
               <SpotlightCard className="card" spotlightColor="rgba(124, 140, 255, 0.25)">
                 <span className="tag">{p.tag}</span>
                 <h3>{p.title}</h3>

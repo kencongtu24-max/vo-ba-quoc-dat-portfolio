@@ -3,6 +3,16 @@ export const roles = [
   { key: "robo", label: "Robotics Instructor & Coach" },
 ];
 
+export const bio =
+  "Mình là Võ Bá Quốc Đạt, sinh viên ngành Công nghệ thông tin tại Đại học Đông Á, đồng thời có niềm đam mê và kinh nghiệm trong lĩnh vực Robotics & STEM. Mình định hướng phát triển song song kỹ năng lập trình, phát triển sản phẩm công nghệ và Robotics. Mục tiêu là không ngừng học hỏi, tạo ra những sản phẩm thực tế và phát triển bản thân trong lĩnh vực công nghệ.";
+
+export const aboutInfo = [
+  { icon: "🎓", label: "Học vấn", value: "Đại học Đông Á – Đà Nẵng, ngành Công nghệ thông tin, Khóa K25" },
+  { icon: "🎂", label: "Ngày sinh", value: "02/11/2004" },
+  { icon: "📍", label: "Quê quán", value: "Hà Tĩnh" },
+  { icon: "🏠", label: "Nơi ở hiện tại", value: "Đà Nẵng" },
+];
+
 export const itSkills = [
   { cat: "Frontend", items: ["HTML", "CSS", "JavaScript", "React", "TypeScript"] },
   { cat: "Backend", items: ["Java", "Spring Boot", "Node.js"] },
