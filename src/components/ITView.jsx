@@ -1,16 +1,17 @@
 import SpotlightCard from "../content/SpotlightCard/SpotlightCard.jsx";
+import Reveal from "./Reveal.jsx";
 import { itSkills, itProjects } from "../data.js";
 
 export default function ITView() {
   return (
-    <section className="view view-section">
-      <div className="section-intro">
+    <section className="view view-section view-it">
+      <Reveal className="section-intro" y={16}>
         <span className="eyebrow">Công nghệ thông tin</span>
         <h1>Sinh viên CNTT tại Đại học Đông Á</h1>
         <p>Sinh viên Công nghệ thông tin, định hướng trở thành Web Developer / Software Developer.</p>
-      </div>
+      </Reveal>
 
-      <div className="block">
+      <Reveal className="block">
         <h2>Kỹ năng</h2>
         {itSkills.map((row) => (
           <div className="skill-row" key={row.cat}>
@@ -24,32 +25,36 @@ export default function ITView() {
             </div>
           </div>
         ))}
-      </div>
+      </Reveal>
 
       <div className="block">
         <h2>Dự án</h2>
         <div className="grid-cards">
-          {itProjects.map((p) => (
-            <SpotlightCard className="card" spotlightColor="rgba(124, 140, 255, 0.25)" key={p.title}>
-              <span className="tag">{p.tag}</span>
-              <h3>{p.title}</h3>
-              <p>{p.desc}</p>
-            </SpotlightCard>
+          {itProjects.map((p, i) => (
+            <Reveal key={p.title} delay={i * 0.06} y={18}>
+              <SpotlightCard className="card" spotlightColor="rgba(124, 140, 255, 0.25)">
+                <span className="tag">{p.tag}</span>
+                <h3>{p.title}</h3>
+                <p>{p.desc}</p>
+              </SpotlightCard>
+            </Reveal>
           ))}
         </div>
       </div>
 
       <div className="block">
-        <div className="goal-box">
-          <span className="eyebrow">🎯 Mục tiêu</span>
-          <p className="goal-tagline">Build. Learn. Innovate.</p>
-          <p>Không ngừng học hỏi, nâng cấp tư duy công nghệ và biến ý tưởng thành những sản phẩm thực tế.</p>
-          <p>
-            Tập trung phát triển Web Development &amp; Software Engineering, hướng đến trở thành một Software Developer
-            chuyên nghiệp, luôn sẵn sàng khám phá công nghệ mới và tạo ra những giải pháp thông minh, hiệu quả và có giá
-            trị.
-          </p>
-        </div>
+        <h2>Mục tiêu</h2>
+        <Reveal>
+          <SpotlightCard className="goal-box" spotlightColor="rgba(124, 140, 255, 0.25)">
+            <p className="goal-tagline">Build. Learn. Innovate.</p>
+            <p>Không ngừng học hỏi, nâng cấp tư duy công nghệ và biến ý tưởng thành những sản phẩm thực tế.</p>
+            <p>
+              Tập trung phát triển Web Development &amp; Software Engineering, hướng đến trở thành một Software
+              Developer chuyên nghiệp, luôn sẵn sàng khám phá công nghệ mới và tạo ra những giải pháp thông minh, hiệu
+              quả và có giá trị.
+            </p>
+          </SpotlightCard>
+        </Reveal>
       </div>
     </section>
   );

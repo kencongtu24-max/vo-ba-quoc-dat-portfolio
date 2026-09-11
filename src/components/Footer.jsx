@@ -1,4 +1,5 @@
 import SpotlightCard from "../content/SpotlightCard/SpotlightCard.jsx";
+import Reveal from "./Reveal.jsx";
 import { contacts } from "../data.js";
 
 const ICONS = {
@@ -30,22 +31,23 @@ export default function Footer() {
     <footer>
       <span className="eyebrow">Liên hệ</span>
       <div className="contact-grid">
-        {contacts.map((c) => (
-          <a
-            className="contact-item"
-            href={c.href}
-            key={c.label}
-            target={c.href.startsWith("http") ? "_blank" : undefined}
-            rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
-          >
-            <SpotlightCard className="contact-body" spotlightColor="rgba(124, 140, 255, 0.2)">
-              <span className="contact-icon">{ICONS[c.icon]}</span>
-              <span className="contact-text">
-                <span className="contact-label">{c.label}</span>
-                <span className="contact-value">{c.value}</span>
-              </span>
-            </SpotlightCard>
-          </a>
+        {contacts.map((c, i) => (
+          <Reveal key={c.label} delay={i * 0.05} y={16}>
+            <a
+              className="contact-item"
+              href={c.href}
+              target={c.href.startsWith("http") ? "_blank" : undefined}
+              rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
+            >
+              <SpotlightCard className="contact-body" spotlightColor="rgba(124, 140, 255, 0.2)">
+                <span className="contact-icon">{ICONS[c.icon]}</span>
+                <span className="contact-text">
+                  <span className="contact-label">{c.label}</span>
+                  <span className="contact-value">{c.value}</span>
+                </span>
+              </SpotlightCard>
+            </a>
+          </Reveal>
         ))}
       </div>
       <div className="footer-credit">

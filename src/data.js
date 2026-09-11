@@ -8,6 +8,7 @@ export const itSkills = [
   { cat: "Backend", items: ["Java", "Spring Boot", "Node.js"] },
   { cat: "Database", items: ["MySQL", "SQL Server"] },
   { cat: "Tools", items: ["Git", "GitHub", "Docker", "VS Code"] },
+  { cat: "AI", items: ["Claude", "ChatGPT", "NotebookLM", "Gemini"] },
 ];
 
 export const itProjects = [
@@ -29,12 +30,12 @@ export const roboSkills = [
 ];
 
 export const roboActivities = [
-  "Đào tạo Robotics",
-  "Robotics 1-kèm-1",
-  "Huấn luyện thi đấu",
-  "Thiết kế sa bàn",
-  "Thiết kế / in khung 3D",
-  "Xây dựng & tối ưu code robot",
+  { icon: "🎓", label: "Đào tạo Robotics" },
+  { icon: "🧑‍🏫", label: "Robotics 1-kèm-1" },
+  { icon: "🏆", label: "Huấn luyện thi đấu" },
+  { icon: "🗺️", label: "Thiết kế sa bàn" },
+  { icon: "🖨️", label: "Thiết kế / in khung 3D" },
+  { icon: "💻", label: "Xây dựng & tối ưu code robot" },
 ];
 
 export const achievements = [
