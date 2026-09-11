@@ -6,7 +6,7 @@ export default function Hero() {
     <div className="hero-top">
       <div className="hero-header">
         <span className="avatar-ring">
-          <img src="/avatar.jpg" alt="Ảnh đại diện Võ Bá Quốc Đạt" loading="lazy" />
+          <img src={`${import.meta.env.BASE_URL}avatar.jpg`} alt="Ảnh đại diện Võ Bá Quốc Đạt" loading="lazy" />
         </span>
         <div>
           <span className="hero-eyebrow">Trang cá nhân</span>

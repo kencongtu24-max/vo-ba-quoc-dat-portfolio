@@ -14,7 +14,7 @@ export default function Navbar({ view, onNavigate }) {
         onClick={() => onNavigate("home")}
         aria-label="Về trang chủ"
       >
-        <img className="brand-avatar" src="/avatar.jpg" alt="" />
+        <img className="brand-avatar" src={`${import.meta.env.BASE_URL}avatar.jpg`} alt="" />
         <span className="brand-name">Quốc Đạt</span>
       </button>
 
