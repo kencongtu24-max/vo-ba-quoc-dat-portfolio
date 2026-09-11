@@ -2,7 +2,7 @@
 
 Trang cá nhân (portfolio) giới thiệu hai vai trò: **sinh viên Công nghệ thông tin** tại Đại học Đông Á và **Robotics Instructor & Competition Coach**. Xây dựng bằng React + Vite, có chế độ sáng/tối, hiệu ứng cuộn và chuyển trang mượt.
 
-🔗 Xem trực tiếp: *(thêm link sau khi deploy)*
+🔗 Xem trực tiếp: [tinyurl.com/voquocdat](https://tinyurl.com/voquocdat) (link gốc: https://kencongtu24-max.github.io/vo-ba-quoc-dat-portfolio/)
 
 ## Tính năng
 
