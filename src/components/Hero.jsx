@@ -1,5 +1,5 @@
-import BlurText from "../content/BlurText/BlurText.jsx";
 import { roles } from "../data.js";
+import MarqueeName from "./MarqueeName.jsx";
 
 export default function Hero() {
   return (
@@ -8,19 +8,11 @@ export default function Hero() {
         <span className="avatar-ring">
           <img src={`${import.meta.env.BASE_URL}avatar.jpg`} alt="Ảnh đại diện Võ Bá Quốc Đạt" loading="lazy" />
         </span>
-        <div>
+        <div className="hero-info">
           <span className="hero-eyebrow">Trang cá nhân</span>
-          {/* Real heading for accessibility/SEO; BlurText below is the animated, decorative version. */}
+          {/* Real heading for accessibility/SEO; the marquee below is the animated, decorative version. */}
           <h1 className="sr-only">Võ Bá Quốc Đạt</h1>
-          <div className="hero-name" aria-hidden="true">
-            <BlurText
-              text="Võ Bá Quốc Đạt"
-              className="hero-name-text"
-              animateBy="words"
-              direction="top"
-              delay={120}
-            />
-          </div>
+          <MarqueeName text="Võ Bá Quốc Đạt" className="hero-name-text marquee-item" />
         </div>
       </div>
       <div className="roles">

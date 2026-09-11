@@ -205,6 +205,14 @@
   align-items: center;
   gap: 26px;
 }
+.hero-info {
+  /* Flex items default to min-width:auto, which lets the wide marquee
+     track push this box (and overflow:hidden on .hero-name) past the
+     available width instead of clipping. Force it to shrink to the
+     row's actual space so the marquee mask/clip works. */
+  min-width: 0;
+  flex: 1 1 auto;
+}
 @media (max-width: 560px) {
   .hero-header {
     flex-direction: column;
@@ -267,13 +275,16 @@
 .hero-name {
   margin-top: 6px;
 }
-.hero-name-text {
+.hero-name.marquee {
+  overflow: hidden;
+}
+.hero-name-text.marquee-item {
+  display: inline-block;
   font-family: "Unbounded", "Manrope", sans-serif;
   font-size: clamp(2.1rem, 6vw, 4rem);
   font-weight: 800;
   letter-spacing: -0.01em;
-  text-wrap: balance;
-  margin: 0;
+  white-space: nowrap;
 }
 .roles {
   display: flex;
@@ -300,6 +311,59 @@
 }
 .role.robo .dot {
   background: linear-gradient(135deg, var(--accent-robo-1), var(--accent-robo-2));
+}
+
+.about-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+.about-bio {
+  padding: 22px 26px;
+}
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.info-grid-item {
+  display: flex;
+}
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+.info-icon {
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  background: color-mix(in srgb, var(--accent-1) 16%, transparent);
+}
+.info-text {
+  min-width: 0;
+}
+.info-label {
+  display: block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.info-value {
+  display: block;
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-top: 2px;
+  color: var(--text);
 }
 
 .tiles {
@@ -477,16 +541,24 @@
 .chip-wrap {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
 }
 .chip {
-  background: var(--surface-2);
-  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--accent-1) 14%, var(--surface-2));
+  border: 1px solid color-mix(in srgb, var(--accent-1) 40%, var(--border));
   color: var(--text);
-  font-size: 0.88rem;
-  font-weight: 600;
-  padding: 6px 13px;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 9px 18px;
   border-radius: 999px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+.chip:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-1);
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  color: #fff;
+  box-shadow: 0 16px 32px -18px color-mix(in srgb, var(--accent-1) 65%, transparent);
 }
 @media (max-width: 560px) {
   .skill-row {
@@ -502,10 +574,14 @@
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 14px;
 }
+.grid-cards-item {
+  display: flex;
+}
 .card {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: 100%;
   transition: transform 0.25s ease, border-color 0.25s ease;
 }
 .card:hover {
@@ -779,6 +855,7 @@ footer {
 .card-spotlight.achv,
 .card-spotlight.contact-body,
 .card-spotlight.activity,
+.card-spotlight.info-item,
 .card-spotlight.goal-box {
   background: color-mix(in srgb, var(--surface) 88%, transparent);
   backdrop-filter: blur(18px);
@@ -804,6 +881,10 @@ footer {
   padding: 14px 16px;
 }
 .card-spotlight.activity {
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+.card-spotlight.info-item {
   border-radius: 14px;
   padding: 14px 16px;
 }

@@ -1,5 +1,6 @@
 import SpotlightCard from "../content/SpotlightCard/SpotlightCard.jsx";
 import Hero from "./Hero.jsx";
+import AboutInfo from "./AboutInfo.jsx";
 
 export default function HomeView({ onNavigate }) {
   const go = (view) => (e) => {
@@ -10,6 +11,7 @@ export default function HomeView({ onNavigate }) {
   return (
     <section className="view view-home">
       <Hero />
+      <AboutInfo />
       <div className="tiles">
         <a className="tile tile-it" href="#it" onClick={go("it")}>
           <SpotlightCard className="tile-body" spotlightColor="rgba(124, 140, 255, 0.35)">
