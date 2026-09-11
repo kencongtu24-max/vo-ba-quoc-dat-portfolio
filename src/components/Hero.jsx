@@ -1,0 +1,36 @@
+import BlurText from "../content/BlurText/BlurText.jsx";
+import { roles } from "../data.js";
+
+export default function Hero() {
+  return (
+    <div className="hero-top">
+      <div className="hero-header">
+        <span className="avatar-ring">
+          <img src="/avatar.jpg" alt="Ảnh đại diện Võ Bá Quốc Đạt" loading="lazy" />
+        </span>
+        <div>
+          <span className="hero-eyebrow">Trang cá nhân</span>
+          {/* Real heading for accessibility/SEO; BlurText below is the animated, decorative version. */}
+          <h1 className="sr-only">Võ Bá Quốc Đạt</h1>
+          <div className="hero-name" aria-hidden="true">
+            <BlurText
+              text="Võ Bá Quốc Đạt"
+              className="hero-name-text"
+              animateBy="words"
+              direction="top"
+              delay={120}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="roles">
+        {roles.map((r) => (
+          <div className={`role ${r.key}`} key={r.key}>
+            <span className="dot" />
+            {r.label}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
