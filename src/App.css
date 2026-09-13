@@ -38,7 +38,14 @@
   background: color-mix(in srgb, var(--bg) 75%, transparent);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
   z-index: -1;
+}
+.navbar.is-scrolled::before {
+  border-color: var(--border);
+  box-shadow: var(--shadow-sm);
 }
 
 .brand {
@@ -54,12 +61,16 @@
   font-family: "Unbounded", sans-serif;
   font-weight: 700;
   font-size: 0.9rem;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.25s var(--ease-out-expo), color 0.25s ease;
 }
 .brand:hover,
 .brand.active {
   background: var(--surface);
   color: var(--text);
+}
+.brand:hover .brand-avatar {
+  border-color: var(--accent-1);
+  transform: scale(1.05);
 }
 .brand:focus-visible {
   outline: 2px solid var(--accent-1);
@@ -71,6 +82,7 @@
   border-radius: 50%;
   object-fit: cover;
   border: 1.5px solid var(--border);
+  transition: border-color 0.25s ease, transform 0.3s var(--ease-out-expo);
 }
 @media (max-width: 480px) {
   .brand-name {
@@ -82,10 +94,11 @@
   display: inline-flex;
   align-items: center;
   gap: 2px;
-  background: var(--surface);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 4px;
+  box-shadow: inset 0 1px 0 0 color-mix(in srgb, var(--text) 6%, transparent);
 }
 .nav-pill {
   border: none;
@@ -98,10 +111,13 @@
   padding: 7px 16px;
   border-radius: 999px;
   cursor: pointer;
-  transition: color 0.25s ease, background 0.25s ease;
+  transition: color 0.25s ease, background 0.3s var(--ease-out-expo), transform 0.3s var(--ease-out-expo);
 }
 .nav-pill:hover {
   color: var(--text);
+}
+.nav-pill:active {
+  transform: scale(0.96);
 }
 .nav-pill:focus-visible {
   outline: 2px solid var(--accent-1);
@@ -110,6 +126,7 @@
 .nav-pill.active {
   color: #fff;
   background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  box-shadow: 0 8px 20px -10px color-mix(in srgb, var(--accent-1) 70%, transparent);
 }
 
 /* ---------- theme toggle ---------- */
@@ -125,11 +142,13 @@
   border-radius: 50%;
   color: var(--text);
   cursor: pointer;
-  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+  transition: border-color 0.3s var(--ease-out-expo), transform 0.3s var(--ease-out-expo), background 0.25s ease,
+    box-shadow 0.3s var(--ease-out-expo);
 }
 .theme-toggle:hover {
   border-color: var(--accent-1);
   transform: translateY(-2px);
+  box-shadow: 0 10px 24px -14px color-mix(in srgb, var(--accent-1) 55%, transparent);
 }
 .theme-toggle:focus-visible {
   outline: 2px solid var(--accent-1);
@@ -165,13 +184,15 @@
   box-shadow: var(--shadow);
   cursor: pointer;
   animation: riseIn 0.3s ease both;
-  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+  transition: border-color 0.3s var(--ease-out-expo), transform 0.3s var(--ease-out-expo), background 0.3s ease,
+    color 0.25s ease, box-shadow 0.3s var(--ease-out-expo);
 }
 .back-to-top:hover {
   border-color: transparent;
-  transform: translateY(-3px);
+  transform: translateY(-4px) scale(1.04);
   background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
   color: #fff;
+  box-shadow: var(--shadow-lg);
 }
 .back-to-top:focus-visible {
   outline: 2px solid var(--accent-1);
@@ -228,7 +249,11 @@
   border-radius: 30%;
   padding: 3px;
   background: linear-gradient(135deg, var(--accent-it-1), var(--accent-it-2) 42%, var(--accent-robo-2) 58%, var(--accent-robo-1));
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.4s var(--ease-out-expo);
+}
+.avatar-ring:hover {
+  transform: scale(1.03) rotate(-1deg);
 }
 .avatar-ring::before {
   content: "";
@@ -264,6 +289,7 @@
   object-fit: cover;
   border-radius: calc(30% - 3px);
   background: var(--surface-2);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--text) 8%, transparent);
 }
 .hero-eyebrow {
   color: var(--text-dim);
@@ -285,31 +311,49 @@
   font-weight: 800;
   letter-spacing: -0.01em;
   white-space: nowrap;
+  background: linear-gradient(
+    100deg,
+    var(--accent-it-1),
+    var(--accent-it-2) 38%,
+    var(--accent-robo-2) 62%,
+    var(--accent-robo-1)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 .roles {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-top: 6px;
 }
 .role {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 0.92rem;
+  font-weight: 700;
   color: var(--text-dim);
+  padding: 8px 16px 8px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
 }
 .role .dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
   flex: none;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--dot-color, var(--accent-1)) 18%, transparent);
 }
 .role.it .dot {
+  --dot-color: var(--accent-it-1);
   background: linear-gradient(135deg, var(--accent-it-1), var(--accent-it-2));
 }
 .role.robo .dot {
+  --dot-color: var(--accent-robo-1);
   background: linear-gradient(135deg, var(--accent-robo-1), var(--accent-robo-2));
 }
 
@@ -335,6 +379,13 @@
   align-items: center;
   gap: 14px;
   width: 100%;
+  transition: transform 0.32s var(--ease-out-expo), border-color 0.32s ease, box-shadow 0.32s var(--ease-out-expo);
+}
+.info-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-1);
+  box-shadow: 0 20px 44px -28px color-mix(in srgb, var(--accent-1) 50%, transparent),
+    inset 0 1px 0 0 color-mix(in srgb, var(--text) 6%, transparent);
 }
 .info-icon {
   flex: none;
@@ -345,7 +396,11 @@
   align-items: center;
   justify-content: center;
   font-size: 1.15rem;
-  background: color-mix(in srgb, var(--accent-1) 16%, transparent);
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--accent-1) 22%, transparent),
+    color-mix(in srgb, var(--accent-2) 10%, transparent)
+  );
 }
 .info-text {
   min-width: 0;
@@ -384,11 +439,12 @@
   box-shadow: var(--shadow);
   border-radius: 20px;
   cursor: pointer;
-  transition: transform 0.28s ease;
+  transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s var(--ease-out-expo);
 }
 .tile:hover,
 .tile:focus-visible {
-  transform: translateY(-5px);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: var(--shadow-lg);
 }
 .tile-it:hover .tile-body,
 .tile-it:focus-visible .tile-body {
@@ -404,7 +460,7 @@
 }
 .tile:hover .tile-icon,
 .tile:focus-visible .tile-icon {
-  transform: scale(1.08);
+  transform: scale(1.08) rotate(-4deg);
 }
 .tile:focus-visible {
   outline: 2px solid var(--text);
@@ -417,9 +473,46 @@
   height: 100%;
   transition: border-color 0.28s ease;
 }
+.card-spotlight.tile-body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, color-mix(in srgb, var(--text) 10%, transparent), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.75s var(--ease-out-expo);
+  pointer-events: none;
+}
+.tile:hover .card-spotlight.tile-body::after,
+.tile:focus-visible .card-spotlight.tile-body::after {
+  left: 130%;
+}
 .tile-icon {
-  font-size: 2.1rem;
-  transition: transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  font-size: 1.8rem;
+  align-self: flex-start;
+  transition: transform 0.35s var(--ease-out-expo);
+}
+.tile-it .tile-icon {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--accent-it-1) 22%, transparent),
+    color-mix(in srgb, var(--accent-it-2) 10%, transparent)
+  );
+}
+.tile-robo .tile-icon {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--accent-robo-1) 22%, transparent),
+    color-mix(in srgb, var(--accent-robo-2) 10%, transparent)
+  );
 }
 .tile-label {
   font-family: "Unbounded", sans-serif;
@@ -438,7 +531,7 @@
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-dim);
-  transition: color 0.3s ease, gap 0.3s ease;
+  transition: color 0.3s ease, gap 0.35s var(--ease-out-expo);
 }
 .tile:hover .tile-arrow {
   gap: 10px;
@@ -488,6 +581,18 @@
   padding-left: 20px;
   border-bottom: 1px solid var(--border);
   margin-bottom: 34px;
+  overflow: hidden;
+}
+.section-intro::after {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: -10%;
+  width: min(420px, 60%);
+  height: 220px;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--accent-1) 22%, transparent), transparent 75%);
+  pointer-events: none;
+  z-index: -1;
 }
 .section-intro::before {
   content: "";
@@ -518,6 +623,7 @@
   margin-bottom: 44px;
 }
 .block h2 {
+  position: relative;
   display: inline-block;
   font-family: "JetBrains Mono", ui-monospace, monospace;
   font-size: 0.72rem;
@@ -529,7 +635,8 @@
   padding: 7px 16px;
   border-radius: 999px;
   margin-bottom: 18px;
-  box-shadow: 0 10px 24px -12px color-mix(in srgb, var(--accent-1) 65%, transparent);
+  box-shadow: 0 10px 24px -12px color-mix(in srgb, var(--accent-1) 65%, transparent),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.35);
 }
 
 .skill-row {
@@ -563,10 +670,11 @@
   font-weight: 700;
   padding: 9px 18px;
   border-radius: 999px;
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  transition: transform 0.3s var(--ease-out-expo), border-color 0.3s ease, box-shadow 0.3s var(--ease-out-expo),
+    background 0.3s ease;
 }
 .chip:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.03);
   border-color: var(--accent-1);
   background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
   color: #fff;
@@ -594,10 +702,10 @@
   flex-direction: column;
   gap: 8px;
   width: 100%;
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.32s var(--ease-out-expo), border-color 0.32s ease, box-shadow 0.32s var(--ease-out-expo);
 }
 .card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   border-color: var(--accent-1);
   box-shadow: 0 22px 48px -28px color-mix(in srgb, var(--accent-1) 55%, transparent),
     inset 0 1px 0 0 color-mix(in srgb, var(--text) 6%, transparent);
@@ -610,8 +718,9 @@
   text-transform: uppercase;
   color: var(--accent-1);
   background: color-mix(in srgb, var(--accent-1) 14%, transparent);
-  padding: 3px 9px;
-  border-radius: 6px;
+  border: 1px solid color-mix(in srgb, var(--accent-1) 30%, transparent);
+  padding: 3px 10px;
+  border-radius: 999px;
 }
 .card h3 {
   font-size: 1.05rem;
@@ -670,10 +779,10 @@
   min-height: 78px;
   font-size: 0.95rem;
   font-weight: 700;
-  transition: transform 0.25s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+  transition: transform 0.32s var(--ease-out-expo), border-color 0.32s ease, box-shadow 0.32s var(--ease-out-expo);
 }
 .activity:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   border-color: var(--accent-1);
   box-shadow: 0 22px 48px -28px color-mix(in srgb, var(--accent-1) 55%, transparent),
     inset 0 1px 0 0 color-mix(in srgb, var(--text) 6%, transparent);
@@ -687,8 +796,12 @@
   align-items: center;
   justify-content: center;
   font-size: 1.25rem;
-  background: color-mix(in srgb, var(--accent-1) 16%, transparent);
-  transition: transform 0.3s ease;
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--accent-1) 22%, transparent),
+    color-mix(in srgb, var(--accent-2) 10%, transparent)
+  );
+  transition: transform 0.35s var(--ease-out-expo);
 }
 .activity:hover .activity-icon {
   transform: scale(1.08) rotate(-4deg);
@@ -737,10 +850,10 @@
   align-items: center;
   gap: 16px;
   position: relative;
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.32s var(--ease-out-expo), border-color 0.32s ease, box-shadow 0.32s var(--ease-out-expo);
 }
 .achv:hover {
-  transform: translateX(3px);
+  transform: translateX(4px);
   border-color: color-mix(in srgb, var(--tier) 55%, var(--border));
   box-shadow: 0 20px 44px -26px color-mix(in srgb, var(--tier) 75%, transparent),
     inset 0 1px 0 0 color-mix(in srgb, var(--text) 6%, transparent);
@@ -783,6 +896,10 @@
     color-mix(in srgb, var(--tier) 8%, transparent)
   );
   box-shadow: 0 6px 16px -9px color-mix(in srgb, var(--tier) 80%, transparent);
+  transition: transform 0.35s var(--ease-out-expo);
+}
+.achv:hover .achv-badge {
+  transform: scale(1.08);
 }
 .achv-body {
   flex: 1 1 auto;
@@ -837,10 +954,10 @@ footer {
   display: block;
   text-decoration: none;
   color: var(--text);
-  transition: transform 0.2s ease;
+  transition: transform 0.3s var(--ease-out-expo);
 }
 .contact-item:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 .contact-item:hover .contact-body,
 .contact-item:focus-visible .contact-body {
@@ -866,8 +983,16 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: color-mix(in srgb, var(--accent-1) 16%, transparent);
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--accent-1) 22%, transparent),
+    color-mix(in srgb, var(--accent-2) 10%, transparent)
+  );
   color: var(--accent-1);
+  transition: transform 0.35s var(--ease-out-expo);
+}
+.contact-item:hover .contact-icon {
+  transform: scale(1.08) rotate(-4deg);
 }
 .contact-icon svg {
   width: 19px;
@@ -924,7 +1049,7 @@ footer {
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid var(--border);
   box-shadow: inset 0 1px 0 0 color-mix(in srgb, var(--text) 6%, transparent);
-  transition: border-color 0.28s ease, box-shadow 0.28s ease;
+  transition: border-color 0.32s var(--ease-out-expo), box-shadow 0.32s var(--ease-out-expo);
 }
 .card-spotlight.tile-body {
   border-radius: 20px;
@@ -958,4 +1083,5 @@ footer {
   border-left: 3px solid var(--accent-1);
   border-radius: 0 16px 16px 0;
   padding: 26px 28px;
+  box-shadow: var(--shadow-sm), inset 0 1px 0 0 color-mix(in srgb, var(--text) 6%, transparent);
 }
