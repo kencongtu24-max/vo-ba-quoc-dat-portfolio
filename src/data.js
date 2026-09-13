@@ -70,7 +70,7 @@ export const achievements = [
 ];
 
 export const contacts = [
-  { label: "Email", value: "kencongtu24@gmail.com", href: "mailto:kencongtu24@gmail.com", icon: "mail" },
+  { label: "Email", value: "quocdat.tech@gmail.com", href: "mailto:quocdat.tech@gmail.com", icon: "mail" },
   { label: "Điện thoại", value: "0364 009 204", href: "tel:0364009204", icon: "phone" },
   { label: "GitHub", value: "Quốc Đạt", href: "https://github.com/kencongtu24-max", icon: "github" },
   { label: "Facebook", value: "Quốc Đạt", href: "https://web.facebook.com/w.daw.04/", icon: "facebook" },
