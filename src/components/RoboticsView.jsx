@@ -1,6 +1,6 @@
 import SpotlightCard from "../content/SpotlightCard/SpotlightCard.jsx";
 import Reveal from "./Reveal.jsx";
-import { roboSkills, roboActivities, achievements } from "../data.js";
+import { roboSkills, roboActivities, roboExperience, achievements } from "../data.js";
 
 export default function RoboticsView() {
   return (
@@ -34,6 +34,21 @@ export default function RoboticsView() {
             </Reveal>
           ))}
         </div>
+      </div>
+
+      <div className="block">
+        <h2>Kinh nghiệm giảng dạy &amp; huấn luyện</h2>
+        <Reveal>
+          <SpotlightCard className="exp-card" spotlightColor="rgba(255, 157, 82, 0.25)">
+            <ul className="exp-list">
+              {roboExperience.map((item, i) => (
+                <li className="exp-item" key={i}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </SpotlightCard>
+        </Reveal>
       </div>
 
       <div className="block">

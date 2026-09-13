@@ -7,8 +7,12 @@ export default function ITView() {
     <section className="view view-section view-it">
       <Reveal className="section-intro" y={16}>
         <span className="eyebrow">Công nghệ thông tin</span>
-        <h1>Sinh viên CNTT tại Đại học Đông Á</h1>
-        <p>Sinh viên Công nghệ thông tin, định hướng trở thành Web Developer / Software Developer.</p>
+        <h1>
+          Information Technology Student
+          <br />
+          Aspiring Web &amp; Software Developer
+        </h1>
+        <p>Đam mê công nghệ, phát triển sản phẩm thực tế và không ngừng nâng cao tư duy lập trình.</p>
       </Reveal>
 
       <Reveal className="block">
