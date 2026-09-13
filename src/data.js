@@ -55,9 +55,9 @@ export const achievements = [
   { tier: "gold", badge: 1, title: "Giải Nhất", desc: "Ngày hội STEM — Phường Hòa Khánh, bảng R1", count: "1 đội" },
   { tier: "silver", badge: 2, title: "Giải Nhì", desc: "Chung kết Robotics Thành phố Đà Nẵng, bảng R1", count: "2 đội" },
   { tier: "bronze", badge: 3, title: "Giải Ba", desc: "Vòng loại Khu vực Miền Trung, bảng R1", count: "1 đội" },
-  { tier: "bronze", badge: 3, title: "Giải Ba", desc: "Các cuộc thi RoboSim/Robocode", count: "Nhiều đội" },
+  { tier: "bronze", badge: 3, title: "Giải Ba", desc: "Các cuộc thi RoboSim/Robocode Thành phố Đà Nẵng", count: "Nhiều đội" },
   { tier: "encourage", badge: 4, title: "Khuyến khích", desc: "Vòng loại Khu vực Miền Trung, bảng R1", count: "1 đội" },
-  { tier: "encourage", badge: 4, title: "Giải Khuyến khích", desc: "Các cuộc thi RoboSim/Robocode", count: "Nhiều đội" },
+  { tier: "encourage", badge: 4, title: "Giải Khuyến khích", desc: "Các cuộc thi RoboSim/Robocode Thành phố Đà Nẵng", count: "Nhiều đội" },
 ];
 
 export const contacts = [
