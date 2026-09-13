@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import ThemeToggle from "./ThemeToggle.jsx";
 
 const NAV_ITEMS = [
@@ -5,9 +6,18 @@ const NAV_ITEMS = [
   { key: "robotics", label: "Robotics" },
 ];
 
-export default function Navbar({ view, onNavigate }) {
+export default function Navbar({ view, onNavigate, theme, onToggleTheme }) {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="navbar">
+    <header className={`navbar ${scrolled ? "is-scrolled" : ""}`}>
       <button
         type="button"
         className={`brand ${view === "home" ? "active" : ""}`}
@@ -32,7 +42,7 @@ export default function Navbar({ view, onNavigate }) {
         ))}
       </nav>
 
-      <ThemeToggle />
+      <ThemeToggle theme={theme} onToggle={onToggleTheme} />
     </header>
   );
 }

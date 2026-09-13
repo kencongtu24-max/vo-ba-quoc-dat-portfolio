@@ -7,6 +7,7 @@ import ITView from "./components/ITView.jsx";
 import RoboticsView from "./components/RoboticsView.jsx";
 import Footer from "./components/Footer.jsx";
 import BackToTop from "./components/BackToTop.jsx";
+import { useTheme } from "./hooks/useTheme.js";
 import "./App.css";
 
 const VALID_VIEWS = new Set(["it", "robotics"]);
@@ -18,6 +19,7 @@ function readView() {
 
 export default function App() {
   const [view, setView] = useState(readView);
+  const [theme, toggleTheme] = useTheme();
 
   useEffect(() => {
     const onHashChange = () => setView(readView());
@@ -36,9 +38,9 @@ export default function App() {
 
   return (
     <>
-      <AuroraBackdrop view={view} />
+      <AuroraBackdrop view={view} theme={theme} />
       <div className="page">
-        <Navbar view={view} onNavigate={navigate} />
+        <Navbar view={view} onNavigate={navigate} theme={theme} onToggleTheme={toggleTheme} />
         <main>
           <AnimatePresence mode="wait">
             <motion.div
