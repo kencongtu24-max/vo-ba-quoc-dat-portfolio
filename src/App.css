@@ -710,6 +710,9 @@
 .achv-bronze {
   --tier: var(--bronze);
 }
+.achv-encourage {
+  --tier: var(--encourage);
+}
 .achv-badge {
   flex: none;
   width: 42px;

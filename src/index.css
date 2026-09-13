@@ -12,6 +12,7 @@
   --gold: #a8790a;
   --silver: #6b7280;
   --bronze: #a15a2a;
+  --encourage: #3d7cc9;
   --accent-1: var(--accent-it-1);
   --accent-2: var(--accent-it-2);
   --shadow: 0 18px 40px -22px rgba(20, 22, 28, 0.35);
@@ -32,6 +33,7 @@
     --gold: #e8b923;
     --silver: #b7bcc7;
     --bronze: #d98a4f;
+    --encourage: #6fa8dc;
     --shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.55);
   }
 }
@@ -49,6 +51,7 @@
   --gold: #e8b923;
   --silver: #b7bcc7;
   --bronze: #d98a4f;
+  --encourage: #6fa8dc;
   --shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.55);
 }
 
