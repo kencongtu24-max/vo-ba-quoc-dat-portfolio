@@ -54,7 +54,7 @@ export const roboExperience = [
   "Hướng dẫn sử dụng Color Sensor, phân tích và sửa lỗi chương trình, tối ưu code nhằm nâng cao tốc độ, độ chính xác và tính ổn định của robot.",
   "Trực tiếp huấn luyện đội tuyển luyện đề, thi thử và thi đấu, xây dựng chiến thuật, phương án xử lý bài và điều chỉnh robot theo từng sa bàn.",
   "Theo dõi tiến độ, đánh giá năng lực và hỗ trợ học viên phát triển tư duy logic, thuật toán và kỹ năng giải quyết vấn đề.",
-  "Đồng hành cùng các đội tuyển tham gia các giải Robotics, Robocode, RoboSim, đạt nhiều thành tích cao tại các cuộc thi cấp địa phương và thành phố Đà Nẵng.",
+  "Đồng hành cùng các đội tuyển tham gia các giải Robotics, Robocode, RoboSim, đạt nhiều thành tích cao tại các cuộc thi cấp địa phương, thành phố Đà Nẵng và khu vực Miền Trung.",
 ];
 
 export const achievements = [
