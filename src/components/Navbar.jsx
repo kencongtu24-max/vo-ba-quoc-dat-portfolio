@@ -22,13 +22,13 @@ export default function Navbar({ view, onNavigate, theme, onToggleTheme }) {
         type="button"
         className={`brand ${view === "home" ? "active" : ""}`}
         onClick={() => onNavigate("home")}
-        aria-label="Về trang chủ"
+        aria-label="Go to home page"
       >
         <img className="brand-avatar" src={`${import.meta.env.BASE_URL}avatar.jpg`} alt="" />
         <span className="brand-name">Quốc Đạt</span>
       </button>
 
-      <nav className="nav-pills" aria-label="Điều hướng chính">
+      <nav className="nav-pills" aria-label="Main navigation">
         {NAV_ITEMS.map((item) => (
           <button
             key={item.key}

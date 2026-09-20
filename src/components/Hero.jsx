@@ -6,10 +6,10 @@ export default function Hero() {
     <div className="hero-top">
       <div className="hero-header">
         <span className="avatar-ring">
-          <img src={`${import.meta.env.BASE_URL}avatar.jpg`} alt="Ảnh đại diện Võ Bá Quốc Đạt" loading="lazy" />
+          <img src={`${import.meta.env.BASE_URL}avatar.jpg`} alt="Portrait of Võ Bá Quốc Đạt" loading="lazy" />
         </span>
         <div className="hero-info">
-          <span className="hero-eyebrow">Trang cá nhân</span>
+          <span className="hero-eyebrow">Personal portfolio</span>
           {/* Real heading for accessibility/SEO; the marquee below is the animated, decorative version. */}
           <h1 className="sr-only">Võ Bá Quốc Đạt</h1>
           <MarqueeName text="Võ Bá Quốc Đạt" className="hero-name-text marquee-item" />

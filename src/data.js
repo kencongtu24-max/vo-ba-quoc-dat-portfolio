@@ -4,13 +4,13 @@ export const roles = [
 ];
 
 export const bio =
-  "Mình là Võ Bá Quốc Đạt, sinh viên ngành Công nghệ thông tin tại Đại học Đông Á, đồng thời có niềm đam mê và kinh nghiệm trong lĩnh vực Robotics & STEM. Mình định hướng phát triển song song kỹ năng lập trình, phát triển sản phẩm công nghệ và Robotics. Mục tiêu là không ngừng học hỏi, tạo ra những sản phẩm thực tế và phát triển bản thân trong lĩnh vực công nghệ.";
+  "I'm Vo Ba Quoc Dat, an Information Technology student at Dong A University with a passion for, and hands-on experience in, Robotics & STEM. I'm building my programming and product-development skills alongside Robotics. My goal is to keep learning, ship real-world products, and grow in the field of technology.";
 
 export const aboutInfo = [
-  { icon: "🎓", label: "Học vấn", value: "Đại học Đông Á – Đà Nẵng, ngành Công nghệ thông tin, Khóa K25" },
-  { icon: "🎂", label: "Ngày sinh", value: "02/11/2004" },
-  { icon: "📍", label: "Quê quán", value: "Hà Tĩnh" },
-  { icon: "🏠", label: "Nơi ở hiện tại", value: "Đà Nẵng" },
+  { icon: "🎓", label: "Education", value: "Dong A University – Da Nang, Information Technology, Class of K25" },
+  { icon: "🎂", label: "Date of birth", value: "November 2, 2004" },
+  { icon: "📍", label: "Hometown", value: "Ha Tinh" },
+  { icon: "🏠", label: "Current residence", value: "Da Nang" },
 ];
 
 export const itSkills = [
@@ -21,13 +21,16 @@ export const itSkills = [
   { cat: "AI", items: ["Claude", "ChatGPT", "NotebookLM", "Gemini"] },
 ];
 
-export const itProjects = [
-  { tag: "Ứng dụng quản lý", title: "Student Management", desc: "Hệ thống quản lý sinh viên." },
-  { tag: "Nền tảng học tập", title: "CodeForge", desc: "Nền tảng luyện tập lập trình." },
-  { tag: "Ứng dụng quản lý", title: "Expense Management", desc: "Ứng dụng quản lý chi tiêu." },
-  { tag: "Thương mại điện tử", title: "E-commerce", desc: "Nền tảng thương mại điện tử." },
-  { tag: "Ứng dụng AI", title: "AI Study Assistant", desc: "Trợ lý học tập tích hợp AI." },
+export const itPersonalProjects = [
+  { tag: "Management app", title: "Student Management", desc: "A student management system." },
+  { tag: "Learning platform", title: "CodeForge", desc: "A coding practice platform." },
+  { tag: "Management app", title: "Expense Management", desc: "An expense tracking app." },
+  { tag: "E-commerce", title: "E-commerce", desc: "An online shopping platform." },
+  { tag: "AI app", title: "AI Study Assistant", desc: "An AI-powered study assistant." },
 ];
+
+// Team projects: add { tag, title, desc } here; when empty, "Coming soon" is shown.
+export const itTeamProjects = [];
 
 export const roboSkills = [
   "Robocode",
@@ -40,38 +43,38 @@ export const roboSkills = [
 ];
 
 export const roboActivities = [
-  { icon: "🎓", label: "Đào tạo Robotics" },
-  { icon: "🧑‍🏫", label: "Robotics 1 vs 1" },
-  { icon: "🏆", label: "Huấn luyện thi đấu" },
-  { icon: "🗺️", label: "Thiết kế sa bàn" },
-  { icon: "🖨️", label: "Thiết kế / in khung 3D" },
-  { icon: "💻", label: "Xây dựng & tối ưu Code & Robot" },
+  { icon: "🎓", label: "Robotics training" },
+  { icon: "🧑‍🏫", label: "1-on-1 Robotics coaching" },
+  { icon: "🏆", label: "Competition coaching" },
+  { icon: "🗺️", label: "Arena / field design" },
+  { icon: "🖨️", label: "3D chassis design & printing" },
+  { icon: "💻", label: "Building & optimizing code and robots" },
 ];
 
 export const roboExperience = [
-  "Trực tiếp giảng dạy và huấn luyện học viên lắp ráp, lập trình, điều khiển và tối ưu robot từ cơ bản đến nâng cao.",
-  "Hướng dẫn lập trình trên Robosim, Robocode và môi trường kéo – thả; xây dựng chương trình điều khiển chuyển động, xoay góc, cảm biến, gắp và phân loại vật thể.",
-  "Hướng dẫn sử dụng Color Sensor, phân tích và sửa lỗi chương trình, tối ưu code nhằm nâng cao tốc độ, độ chính xác và tính ổn định của robot.",
-  "Trực tiếp huấn luyện đội tuyển luyện đề, thi thử và thi đấu, xây dựng chiến thuật, phương án xử lý bài và điều chỉnh robot theo từng sa bàn.",
-  "Theo dõi tiến độ, đánh giá năng lực và hỗ trợ học viên phát triển tư duy logic, thuật toán và kỹ năng giải quyết vấn đề.",
-  "Đồng hành cùng các đội tuyển tham gia các giải Robotics, Robocode, RoboSim, đạt nhiều thành tích cao tại các cuộc thi cấp địa phương, thành phố Đà Nẵng và khu vực Miền Trung.",
+  "Teach and coach students hands-on in assembling, programming, controlling and optimizing robots, from beginner to advanced level.",
+  "Guide students in programming with RoboSim, Robocode and drag-and-drop environments; build control programs for movement, turning angles, sensors, grabbing and sorting objects.",
+  "Teach the use of the Color Sensor, analyze and debug programs, and optimize code to improve the speed, accuracy and stability of robots.",
+  "Directly coach competition teams through practice problems, mock tests and matches, developing strategies and solutions for each task and tuning robots for each arena.",
+  "Track progress, assess ability, and support students in developing logical thinking, algorithms and problem-solving skills.",
+  "Accompany teams competing in Robotics, Robocode and RoboSim contests, achieving many top results at local, Da Nang City and Central Vietnam regional competitions.",
 ];
 
 export const achievements = [
-  { tier: "gold", badge: "🥇", title: "Vô Địch", desc: "Vòng loại Khu vực Miền Trung, bảng R1", count: "1 đội" },
-  { tier: "gold", badge: "🥇", title: "Vô Địch", desc: "Chung kết Robotics Thành phố Đà Nẵng, bảng R1", count: "1 đội" },
-  { tier: "gold", badge: "🥇", title: "Giải Nhất", desc: "Vòng loại Robocode — Phường Ngũ Hành Sơn, bảng R1", count: "1 đội" },
-  { tier: "gold", badge: "🥇", title: "Giải Nhất", desc: "Ngày hội STEM — Phường Hòa Khánh, bảng R1", count: "1 đội" },
-  { tier: "silver", badge: "🥈", title: "Giải Nhì", desc: "Chung kết Robotics Thành phố Đà Nẵng, bảng R1", count: "2 đội" },
-  { tier: "bronze", badge: "🥉", title: "Giải Ba", desc: "Vòng loại Khu vực Miền Trung, bảng R1", count: "1 đội" },
-  { tier: "bronze", badge: "🥉", title: "Giải Ba", desc: "Các cuộc thi RoboSim/Robocode Thành phố Đà Nẵng", count: "Nhiều đội" },
-  { tier: "encourage", badge: "🏅", title: "Khuyến Khích", desc: "Vòng loại Khu vực Miền Trung, bảng R1", count: "1 đội" },
-  { tier: "encourage", badge: "🏅", title: "Giải Khuyến Khích", desc: "Các cuộc thi RoboSim/Robocode Thành phố Đà Nẵng", count: "Nhiều đội" },
+  { tier: "gold", badge: "🥇", title: "Champion", desc: "Central Vietnam Regional Qualifier, R1 bracket", count: "1 team" },
+  { tier: "gold", badge: "🥇", title: "Champion", desc: "Da Nang City Robotics Final, R1 bracket", count: "1 team" },
+  { tier: "gold", badge: "🥇", title: "First Prize", desc: "Robocode Qualifier — Ngu Hanh Son Ward, R1 bracket", count: "1 team" },
+  { tier: "gold", badge: "🥇", title: "First Prize", desc: "STEM Festival — Hoa Khanh Ward, R1 bracket", count: "1 team" },
+  { tier: "silver", badge: "🥈", title: "Second Prize", desc: "Da Nang City Robotics Final, R1 bracket", count: "2 teams" },
+  { tier: "bronze", badge: "🥉", title: "Third Prize", desc: "Central Vietnam Regional Qualifier, R1 bracket", count: "1 team" },
+  { tier: "bronze", badge: "🥉", title: "Third Prize", desc: "Da Nang City RoboSim/Robocode contests", count: "Multiple teams" },
+  { tier: "encourage", badge: "🏅", title: "Consolation Prize", desc: "Central Vietnam Regional Qualifier, R1 bracket", count: "1 team" },
+  { tier: "encourage", badge: "🏅", title: "Consolation Prize", desc: "Da Nang City RoboSim/Robocode contests", count: "Multiple teams" },
 ];
 
 export const contacts = [
   { label: "Email", value: "vquocdat.tech@gmail.com", href: "mailto:vquocdat.tech@gmail.com", icon: "mail" },
-  { label: "Điện thoại", value: "0364 009 204", href: "tel:0364009204", icon: "phone" },
+  { label: "Phone", value: "0364 009 204", href: "tel:0364009204", icon: "phone" },
   { label: "GitHub", value: "Quốc Đạt", href: "https://github.com/kencongtu24-max", icon: "github" },
   { label: "Facebook", value: "Quốc Đạt", href: "https://web.facebook.com/w.daw.04/", icon: "facebook" },
 ];

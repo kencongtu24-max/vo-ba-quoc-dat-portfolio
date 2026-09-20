@@ -3,7 +3,7 @@
   --surface: #ffffff;
   --surface-2: #e7e9f0;
   --text: #14161c;
-  --text-dim: #5b5f6b;
+  --text-dim: #555967;
   --border: #dadce3;
   --accent-it-1: #3d5cf5;
   --accent-it-2: #8b3ef0;
@@ -30,7 +30,7 @@
     --surface: #15171f;
     --surface-2: #1d2029;
     --text: #f0f1f5;
-    --text-dim: #9a9eac;
+    --text-dim: #a6aab8;
     --border: #2b2e3a;
     --accent-it-1: #7c8cff;
     --accent-it-2: #c084fc;
@@ -50,7 +50,7 @@
   --surface: #15171f;
   --surface-2: #1d2029;
   --text: #f0f1f5;
-  --text-dim: #9a9eac;
+  --text-dim: #a6aab8;
   --border: #2b2e3a;
   --accent-it-1: #7c8cff;
   --accent-it-2: #c084fc;
@@ -121,6 +121,8 @@ h2,
 h3 {
   font-family: "Unbounded", "Manrope", sans-serif;
   text-wrap: balance;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
   margin: 0;
 }
 p {

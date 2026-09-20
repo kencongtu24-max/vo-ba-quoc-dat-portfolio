@@ -29,7 +29,7 @@ const ICONS = {
 export default function Footer() {
   return (
     <footer>
-      <span className="eyebrow">Liên hệ</span>
+      <span className="eyebrow">Contact</span>
       <div className="contact-grid">
         {contacts.map((c, i) => (
           <Reveal key={c.label} delay={i * 0.05} y={16}>
