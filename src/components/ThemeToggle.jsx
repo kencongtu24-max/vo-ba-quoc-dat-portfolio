@@ -9,8 +9,8 @@ export default function ThemeToggle({ theme, onToggle }) {
       className="theme-toggle"
       onClick={onToggle}
       aria-pressed={isDark}
-      aria-label={isDark ? "Chuyển sang giao diện sáng" : "Chuyển sang giao diện tối"}
-      title={isDark ? "Giao diện sáng" : "Giao diện tối"}
+      aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+      title={isDark ? "Light theme" : "Dark theme"}
     >
       <span className="theme-toggle-icon">
         <AnimatePresence mode="wait" initial={false}>

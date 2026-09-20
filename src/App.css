@@ -16,6 +16,20 @@
   }
 }
 
+/* ---------- scroll progress ---------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 40;
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--accent-it-1), var(--accent-it-2), var(--accent-robo-2), var(--accent-robo-1));
+  box-shadow: 0 0 12px color-mix(in srgb, var(--accent-it-2) 60%, transparent);
+  pointer-events: none;
+}
+
 /* ---------- navbar ---------- */
 .navbar {
   position: sticky;
@@ -623,20 +637,31 @@
   margin-bottom: 44px;
 }
 .block h2 {
-  position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 14px;
   font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--accent-1);
+  margin-bottom: 20px;
+}
+.block h2::before {
+  content: "";
+  flex: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
   background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-  padding: 7px 16px;
-  border-radius: 999px;
-  margin-bottom: 18px;
-  box-shadow: 0 10px 24px -12px color-mix(in srgb, var(--accent-1) 65%, transparent),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-1) 18%, transparent);
+}
+.block h2::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--accent-1) 45%, var(--border)), transparent);
 }
 
 .skill-row {
@@ -704,14 +729,38 @@
   width: 100%;
   transition: transform 0.32s var(--ease-out-expo), border-color 0.32s ease, box-shadow 0.32s var(--ease-out-expo);
 }
+.card {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.2s ease-out, border-color 0.32s ease, box-shadow 0.32s var(--ease-out-expo);
+}
 .card:hover {
-  transform: translateY(-4px);
+  transform: perspective(900px) translateY(-4px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
   border-color: var(--accent-1);
   box-shadow: 0 22px 48px -28px color-mix(in srgb, var(--accent-1) 55%, transparent),
     inset 0 1px 0 0 color-mix(in srgb, var(--text) 6%, transparent);
 }
+.card-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.card-index {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px color-mix(in srgb, var(--accent-1) 45%, transparent);
+  transition: -webkit-text-stroke-color 0.3s ease, color 0.3s ease;
+}
+.card:hover .card-index {
+  color: color-mix(in srgb, var(--accent-1) 18%, transparent);
+  -webkit-text-stroke-color: var(--accent-1);
+}
 .card .tag {
   align-self: flex-start;
+  white-space: nowrap;
   font-family: "JetBrains Mono", monospace;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
@@ -817,14 +866,14 @@
 .exp-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 18px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .exp-item {
   position: relative;
-  padding-left: 22px;
+  padding-left: 30px;
   color: var(--text);
   font-size: 1rem;
   line-height: 1.55;
@@ -833,11 +882,28 @@
   content: "";
   position: absolute;
   left: 0;
-  top: 0.55em;
-  width: 7px;
-  height: 7px;
+  top: 0.4em;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  background: var(--surface);
+  border: 2px solid var(--accent-1);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-1) 16%, transparent);
+  transition: background 0.3s ease, transform 0.3s var(--ease-out-expo);
+}
+.exp-item:hover::before {
+  background: var(--accent-1);
+  transform: scale(1.2);
+}
+/* Rail connecting each node to the next one. */
+.exp-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: calc(0.4em + 15px);
+  bottom: calc(-18px + 0.4em - 4px);
+  width: 1px;
+  background: linear-gradient(180deg, var(--accent-1), color-mix(in srgb, var(--accent-1) 15%, transparent));
 }
 
 .achv-list {
@@ -1049,7 +1115,12 @@ footer {
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid var(--border);
   box-shadow: inset 0 1px 0 0 color-mix(in srgb, var(--text) 6%, transparent);
-  transition: border-color 0.32s var(--ease-out-expo), box-shadow 0.32s var(--ease-out-expo);
+  transition: transform 0.32s var(--ease-out-expo), border-color 0.32s var(--ease-out-expo),
+    box-shadow 0.32s var(--ease-out-expo);
+}
+/* Tilt follows the cursor, so it needs a snappier curve than the lift. */
+.card-spotlight.card {
+  transition: transform 0.18s ease-out, border-color 0.32s var(--ease-out-expo), box-shadow 0.32s var(--ease-out-expo);
 }
 .card-spotlight.tile-body {
   border-radius: 20px;

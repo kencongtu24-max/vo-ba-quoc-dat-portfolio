@@ -16,17 +16,17 @@ export default function HomeView({ onNavigate }) {
         <a className="tile tile-it" href="#it" onClick={go("it")}>
           <SpotlightCard className="tile-body" spotlightColor="rgba(124, 140, 255, 0.35)">
             <span className="tile-icon">💻</span>
-            <span className="tile-label">CÔNG NGHỆ THÔNG TIN</span>
-            <span className="tile-sub">Kỹ năng, dự án &amp; mục tiêu phát triển</span>
-            <span className="tile-arrow">Xem chi tiết →</span>
+            <span className="tile-label">INFORMATION TECHNOLOGY</span>
+            <span className="tile-sub">Skills, projects &amp; development goals</span>
+            <span className="tile-arrow">View details →</span>
           </SpotlightCard>
         </a>
         <a className="tile tile-robo" href="#robotics" onClick={go("robotics")}>
           <SpotlightCard className="tile-body" spotlightColor="rgba(255, 157, 82, 0.35)">
             <span className="tile-icon">🤖</span>
             <span className="tile-label">ROBOTICS</span>
-            <span className="tile-sub">Hoạt động, kỹ năng huấn luyện &amp; thành tích</span>
-            <span className="tile-arrow">Xem chi tiết →</span>
+            <span className="tile-sub">Activities, coaching skills &amp; achievements</span>
+            <span className="tile-arrow">View details →</span>
           </SpotlightCard>
         </a>
       </div>

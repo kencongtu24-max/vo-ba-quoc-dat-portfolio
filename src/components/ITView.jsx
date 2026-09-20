@@ -1,22 +1,52 @@
 import SpotlightCard from "../content/SpotlightCard/SpotlightCard.jsx";
 import Reveal from "./Reveal.jsx";
-import { itSkills, itProjects } from "../data.js";
+import { itSkills, itPersonalProjects, itTeamProjects } from "../data.js";
+
+function ProjectGrid({ projects }) {
+  if (projects.length === 0) {
+    return (
+      <Reveal>
+        <SpotlightCard className="card" spotlightColor="rgba(124, 140, 255, 0.25)">
+          <p>Coming soon...</p>
+        </SpotlightCard>
+      </Reveal>
+    );
+  }
+  return (
+    <div className="grid-cards">
+      {projects.map((p, i) => (
+        <Reveal className="grid-cards-item" key={p.title} delay={i * 0.06} y={18}>
+          <SpotlightCard className="card" spotlightColor="rgba(124, 140, 255, 0.25)" tilt>
+            <div className="card-head">
+              <span className="card-index" aria-hidden="true">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="tag">{p.tag}</span>
+            </div>
+            <h3>{p.title}</h3>
+            <p>{p.desc}</p>
+          </SpotlightCard>
+        </Reveal>
+      ))}
+    </div>
+  );
+}
 
 export default function ITView() {
   return (
     <section className="view view-section view-it">
       <Reveal className="section-intro" y={16}>
-        <span className="eyebrow">Công nghệ thông tin</span>
+        <span className="eyebrow">Information Technology</span>
         <h1>
           Information Technology Student
           <br />
           Aspiring Web &amp; Software Developer
         </h1>
-        <p>Đam mê công nghệ, phát triển sản phẩm thực tế và không ngừng nâng cao tư duy lập trình.</p>
+        <p>Passionate about technology, building real-world products, and continually sharpening my programming mindset.</p>
       </Reveal>
 
       <Reveal className="block">
-        <h2>Kỹ năng</h2>
+        <h2>Skills</h2>
         {itSkills.map((row) => (
           <div className="skill-row" key={row.cat}>
             <span className="skill-cat">{row.cat}</span>
@@ -32,30 +62,25 @@ export default function ITView() {
       </Reveal>
 
       <div className="block">
-        <h2>Dự án</h2>
-        <div className="grid-cards">
-          {itProjects.map((p, i) => (
-            <Reveal className="grid-cards-item" key={p.title} delay={i * 0.06} y={18}>
-              <SpotlightCard className="card" spotlightColor="rgba(124, 140, 255, 0.25)">
-                <span className="tag">{p.tag}</span>
-                <h3>{p.title}</h3>
-                <p>{p.desc}</p>
-              </SpotlightCard>
-            </Reveal>
-          ))}
-        </div>
+        <h2>Personal Projects</h2>
+        <ProjectGrid projects={itPersonalProjects} />
       </div>
 
       <div className="block">
-        <h2>Mục tiêu</h2>
+        <h2>Team Projects</h2>
+        <ProjectGrid projects={itTeamProjects} />
+      </div>
+
+      <div className="block">
+        <h2>Goals</h2>
         <Reveal>
           <SpotlightCard className="goal-box" spotlightColor="rgba(124, 140, 255, 0.25)">
             <p className="goal-tagline">Build. Learn. Innovate.</p>
-            <p>Không ngừng học hỏi, nâng cấp tư duy công nghệ và biến ý tưởng thành những sản phẩm thực tế.</p>
+            <p>Keep learning, level up my technical thinking, and turn ideas into real-world products.</p>
             <p>
-              Tập trung phát triển Web Development &amp; Software Engineering, hướng đến trở thành một Software
-              Developer chuyên nghiệp, luôn sẵn sàng khám phá công nghệ mới và tạo ra những giải pháp thông minh, hiệu
-              quả và có giá trị.
+              Focused on Web Development &amp; Software Engineering, aiming to become a professional Software
+              Developer who is always ready to explore new technologies and create smart, efficient and valuable
+              solutions.
             </p>
           </SpotlightCard>
         </Reveal>

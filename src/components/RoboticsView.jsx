@@ -8,11 +8,11 @@ export default function RoboticsView() {
       <Reveal className="section-intro" y={16}>
         <span className="eyebrow">Robotics</span>
         <h1>Robotics Instructor &amp; Competition Coach</h1>
-        <p>Đào tạo và huấn luyện các đội thi đấu robotics, từ lắp ráp, lập trình đến chiến thuật thi đấu.</p>
+        <p>Training and coaching robotics competition teams, from assembly and programming to match strategy.</p>
       </Reveal>
 
       <Reveal className="block">
-        <h2>Kỹ năng</h2>
+        <h2>Skills</h2>
         <div className="chip-wrap">
           {roboSkills.map((s) => (
             <span className="chip" key={s}>
@@ -23,7 +23,7 @@ export default function RoboticsView() {
       </Reveal>
 
       <div className="block">
-        <h2>Hoạt động</h2>
+        <h2>Activities</h2>
         <div className="activity-grid">
           {roboActivities.map((a, i) => (
             <Reveal className="activity-grid-item" key={a.label} delay={i * 0.05} y={16}>
@@ -37,7 +37,7 @@ export default function RoboticsView() {
       </div>
 
       <div className="block">
-        <h2>Kinh nghiệm giảng dạy &amp; huấn luyện</h2>
+        <h2>Teaching &amp; Coaching Experience</h2>
         <Reveal>
           <SpotlightCard className="exp-card" spotlightColor="rgba(255, 157, 82, 0.25)">
             <ul className="exp-list">
@@ -52,7 +52,7 @@ export default function RoboticsView() {
       </div>
 
       <div className="block">
-        <h2>Thành tích</h2>
+        <h2>Achievements</h2>
         <div className="achv-list">
           {achievements.map((a, i) => (
             <Reveal key={`${a.title}-${i}`} delay={i * 0.05} y={14}>
@@ -70,17 +70,17 @@ export default function RoboticsView() {
       </div>
 
       <div className="block">
-        <h2>Mục tiêu</h2>
+        <h2>Goals</h2>
         <Reveal>
           <SpotlightCard className="goal-box" spotlightColor="rgba(255, 157, 82, 0.25)">
             <p className="goal-tagline">Design. Program. Compete.</p>
             <p>
-              Không ngừng phát triển kỹ năng lập trình, thiết kế và điều khiển robot, kết hợp tư duy kỹ thuật với khả
-              năng giải quyết vấn đề trong thực tế.
+              Continually developing my skills in programming, designing and controlling robots, combining
+              engineering thinking with real-world problem solving.
             </p>
             <p>
-              Hướng đến xây dựng những robot thông minh, tối ưu và sáng tạo, đồng thời chia sẻ kiến thức và đồng hành
-              cùng học sinh trong quá trình học tập, sáng tạo và chinh phục các cuộc thi Robotics.
+              Aiming to build smart, optimized and creative robots, while sharing knowledge and supporting
+              students as they learn, create and take on Robotics competitions.
             </p>
           </SpotlightCard>
         </Reveal>

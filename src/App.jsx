@@ -7,6 +7,7 @@ import ITView from "./components/ITView.jsx";
 import RoboticsView from "./components/RoboticsView.jsx";
 import Footer from "./components/Footer.jsx";
 import BackToTop from "./components/BackToTop.jsx";
+import ScrollProgress from "./components/ScrollProgress.jsx";
 import { useTheme } from "./hooks/useTheme.js";
 import "./App.css";
 
@@ -38,6 +39,7 @@ export default function App() {
 
   return (
     <>
+      <ScrollProgress />
       <AuroraBackdrop view={view} theme={theme} />
       <div className="page">
         <Navbar view={view} onNavigate={navigate} theme={theme} onToggleTheme={toggleTheme} />
