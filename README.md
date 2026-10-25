@@ -29,7 +29,7 @@ Portfolio giới thiệu hai vai trò của mình: **sinh viên Công nghệ th�
 
 ## Giao diện
 
-- **Thẻ dự án dạng trưng bày:** ảnh chụp giao diện thật đặt trong khung trình duyệt, xen kẽ trái/phải; nhãn "Đang chạy trực tuyến" cho dự án có website.
+- **Thẻ dự án dạng trưng bày:** ảnh chụp giao diện thật đặt trong khung trình duyệt, xen kẽ trái/phải. Thanh địa chỉ hiện tên miền thật cho dự án có website (kèm nhãn "Đang chạy trực tuyến"), còn dự án chạy trên máy hiện dạng `tenduan.local`.
 - **Thu gọn thông minh:** mỗi dự án hiện 3 chức năng nổi bật và tối đa 8 công nghệ, phần còn lại mở bằng "Thêm N chức năng" và ô `+N`.
 - **Logo công nghệ** cho nhãn kỹ năng và công nghệ (từ [Simple Icons](https://simpleicons.org/)); logo màu quá tối tự đổi theo màu chữ để đọc được ở cả hai chế độ.
 - **Sáng / tối** theo hệ thống hoặc chọn tay, lưu vào `localStorage`, không chớp sai màu khi tải trang.
@@ -83,7 +83,7 @@ Mỗi dự án trong `itPersonalProjects` có các trường:
 |---|---|
 | `tag`, `title`, `desc` | Loại dự án, tên, mô tả ngắn |
 | `image` | Ảnh giao diện, đặt trong `public/projects/` (ví dụ `"projects/finflow.jpg"`, tỉ lệ 16:9 hoặc 16:10) |
-| `link` | Website đang chạy — có thì hiện nút "Xem website" và nhãn "Đang chạy trực tuyến" |
+| `link` | Website đang chạy — có thì hiện nút "Xem website", nhãn "Đang chạy trực tuyến" và tên miền thật trên khung ảnh; để trống thì khung ảnh hiện `tenduan.local` |
 | `repo` | Link GitHub mã nguồn — để trống thì nút "Mã nguồn" được ẩn |
 | `features` | Danh sách chức năng; **3 dòng đầu luôn hiện ra**, nên đặt điểm mạnh nhất lên đầu |
 | `tools` | Công nghệ; 8 mục đầu hiện ra, phần còn lại nằm trong ô `+N` |

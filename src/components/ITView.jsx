@@ -40,7 +40,7 @@ function ToolChip({ name }) {
 }
 
 function ProjectShot({ p }) {
-  const address = p.link ? new URL(p.link).host : "Bản chạy trên máy";
+  const address = p.link ? new URL(p.link).host : `${p.title.toLowerCase().replace(/\s+/g, "")}.local`;
   const frame = (
     <>
       <div className="shot-bar" aria-hidden="true">
@@ -49,7 +49,7 @@ function ProjectShot({ p }) {
           <i />
           <i />
         </span>
-        <span className={`shot-url ${p.link ? "" : "shot-url-local"}`}>{address}</span>
+        <span className="shot-url">{address}</span>
       </div>
       <div className="shot-img">
         <img
