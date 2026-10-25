@@ -1017,10 +1017,6 @@ a.card-shot:hover {
   border-radius: 6px;
   background: var(--surface);
 }
-.shot-url-local {
-  font-family: inherit;
-  font-weight: 600;
-}
 .shot-img {
   aspect-ratio: 16 / 9;
   overflow: hidden;
