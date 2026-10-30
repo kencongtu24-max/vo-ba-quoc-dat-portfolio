@@ -1,6 +1,8 @@
 import { ArrowItem, ExperienceCallout, GoalCallout, Heading, PartHeader } from "./Blocks.jsx";
 import { achievements, experience, goals, roboActivities, roboSkills } from "../data.js";
 
+const MEDALS = { gold: "🥇", silver: "🥈", bronze: "🥉", encourage: "🏅" };
+
 export default function RoboticsPart() {
   return (
     <section className="n-part" aria-labelledby="robotics-title">
@@ -37,29 +39,28 @@ export default function RoboticsPart() {
       <Heading id="thanh-tich" level={3} hint="Thành tích các đội tuyển mình trực tiếp huấn luyện">
         Thành tích
       </Heading>
-      <div className="n-table-wrap">
-        <table className="n-table">
-          <thead>
-            <tr>
-              <th scope="col">Giải</th>
-              <th scope="col">Cuộc thi</th>
-              <th scope="col">Số đội</th>
-            </tr>
-          </thead>
-          <tbody>
-            {achievements.map((a, i) => (
-              <tr key={`${a.title}-${i}`}>
-                <td>
-                  <span className={`n-tag n-tier-${a.tier}`}>
-                    <span aria-hidden="true">{a.badge}</span> {a.title}
+      <div className="n-levels">
+        {achievements.map((g) => (
+          <div className="n-level" key={g.level}>
+            <h4 className="n-level-title">
+              <span aria-hidden="true">{g.icon}</span> {g.level}
+            </h4>
+            <ul className="n-events">
+              {g.events.map((e) => (
+                <li className="n-event" key={e.name}>
+                  <span className="n-event-name">{e.name}</span>
+                  <span className="n-tags">
+                    {e.awards.map((a) => (
+                      <span className={`n-tag n-tier-${a.tier}`} key={a.title}>
+                        <span aria-hidden="true">{MEDALS[a.tier]}</span> {a.title} · {a.count}
+                      </span>
+                    ))}
                   </span>
-                </td>
-                <td>{a.desc}</td>
-                <td className="n-table-num">{a.count}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
 
       <Heading level={3}>Mục tiêu</Heading>

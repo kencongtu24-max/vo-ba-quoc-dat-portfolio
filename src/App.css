@@ -442,38 +442,42 @@ button.n-card:hover .n-card-cover img {
 }
 
 /* ---------- table ---------- */
-.n-table-wrap {
-  overflow-x: auto;
-  margin-top: 8px;
+/* Achievements grouped by competition level, one block per level. */
+.n-levels {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
 }
-.n-table {
-  width: 100%;
-  min-width: 560px;
-  border-collapse: collapse;
-  font-size: 14px;
+.n-level {
+  padding: 14px 18px;
+  border-radius: 6px;
+  background: var(--callout);
 }
-.n-table th,
-.n-table td {
-  padding: 8px 10px;
+.n-level-title {
+  margin: 0 0 6px;
+  font-size: 1.05em;
+  font-weight: 600;
+}
+.n-events {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.n-event {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 16px;
+  padding: 8px 0 8px 28px;
   border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  text-align: left;
-  vertical-align: top;
 }
-.n-table th + th,
-.n-table td + td {
-  border-left: 1px solid var(--border);
+.n-event:first-child {
+  border-top: 0;
 }
-.n-table th {
-  font-weight: 400;
-  color: var(--text-dim);
-}
-.n-table tbody tr:hover {
-  background: var(--bg-hover);
-}
-.n-table-num {
-  white-space: nowrap;
-  color: var(--text-dim);
+.n-event-name {
+  font-size: 15px;
 }
 
 /* ---------- project peek ---------- */
@@ -702,5 +706,8 @@ button.n-card:hover .n-card-cover img {
   }
   .n-prop {
     grid-template-columns: 100px minmax(0, 1fr);
+  }
+  .n-event {
+    padding-left: 0;
   }
 }
