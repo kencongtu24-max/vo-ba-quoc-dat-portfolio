@@ -230,16 +230,56 @@ export const roboExperience = [
   "Đồng hành cùng các đội tuyển tham gia các giải Robotics, Robocode, RoboSim, đạt nhiều thành tích cao tại các cuộc thi cấp địa phương, thành phố Đà Nẵng và khu vực Miền Trung.",
 ];
 
+// Grouped by competition level, then event; each award's `tier` picks its medal and colour.
 export const achievements = [
-  { tier: "gold", badge: "🥇", title: "Vô Địch", desc: "Vòng loại Khu vực Miền Trung, bảng R1", count: "1 đội" },
-  { tier: "gold", badge: "🥇", title: "Vô Địch", desc: "Chung kết Robotics Thành phố Đà Nẵng, bảng R1", count: "1 đội" },
-  { tier: "gold", badge: "🥇", title: "Giải Nhất", desc: "Vòng loại Robocode — Phường Ngũ Hành Sơn, bảng R1", count: "1 đội" },
-  { tier: "gold", badge: "🥇", title: "Giải Nhất", desc: "Ngày hội STEM — Phường Hòa Khánh, bảng R1", count: "1 đội" },
-  { tier: "silver", badge: "🥈", title: "Giải Nhì", desc: "Chung kết Robotics Thành phố Đà Nẵng, bảng R1", count: "2 đội" },
-  { tier: "bronze", badge: "🥉", title: "Giải Ba", desc: "Vòng loại Khu vực Miền Trung, bảng R1", count: "1 đội" },
-  { tier: "bronze", badge: "🥉", title: "Giải Ba", desc: "Các cuộc thi RoboSim/Robocode Thành phố Đà Nẵng", count: "Nhiều đội" },
-  { tier: "encourage", badge: "🏅", title: "Khuyến Khích", desc: "Vòng loại Khu vực Miền Trung, bảng R1", count: "1 đội" },
-  { tier: "encourage", badge: "🏅", title: "Giải Khuyến Khích", desc: "Các cuộc thi RoboSim/Robocode Thành phố Đà Nẵng", count: "Nhiều đội" },
+  {
+    icon: "🏟️",
+    level: "Khu vực Miền Trung",
+    events: [
+      {
+        name: "Vòng loại Khu vực Miền Trung, bảng R1",
+        awards: [
+          { tier: "gold", title: "Vô Địch", count: "1 đội" },
+          { tier: "bronze", title: "Giải Ba", count: "1 đội" },
+          { tier: "encourage", title: "Giải Khuyến Khích", count: "1 đội" },
+        ],
+      },
+    ],
+  },
+  {
+    icon: "🏙️",
+    level: "Thành phố Đà Nẵng",
+    events: [
+      {
+        name: "Chung kết Robotics Thành phố Đà Nẵng, bảng R1",
+        awards: [
+          { tier: "gold", title: "Vô Địch", count: "1 đội" },
+          { tier: "silver", title: "Giải Nhì", count: "2 đội" },
+        ],
+      },
+      {
+        name: "Các cuộc thi RoboSim / Robocode Thành phố Đà Nẵng",
+        awards: [
+          { tier: "bronze", title: "Giải Ba", count: "Nhiều đội" },
+          { tier: "encourage", title: "Giải Khuyến Khích", count: "Nhiều đội" },
+        ],
+      },
+    ],
+  },
+  {
+    icon: "🏘️",
+    level: "Cấp phường",
+    events: [
+      {
+        name: "Vòng loại Robocode — Phường Ngũ Hành Sơn, bảng R1",
+        awards: [{ tier: "gold", title: "Giải Nhất", count: "1 đội" }],
+      },
+      {
+        name: "Ngày hội STEM — Phường Hòa Khánh, bảng R1",
+        awards: [{ tier: "gold", title: "Giải Nhất", count: "1 đội" }],
+      },
+    ],
+  },
 ];
 
 export const contacts = [

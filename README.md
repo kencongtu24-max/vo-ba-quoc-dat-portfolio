@@ -15,7 +15,7 @@ Toàn bộ nằm trên **một trang**, bố cục theo kiểu trang Notion (l�
 | **Đầu trang** | Ảnh bên trái; bên phải là tên, hai vai trò (bấm để tới phần tương ứng), đoạn giới thiệu và liên hệ (Email, Điện thoại, GitHub, Facebook) |
 | **Thông tin** | Một hàng: ngày sinh, quê quán, nơi ở, học vấn |
 | **💻 Information Technology** (`#it`) | Kỹ năng theo nhóm, kinh nghiệm, gallery dự án cá nhân / nhóm (bấm vào thẻ để mở trang chi tiết), mục tiêu |
-| **🤖 Robotics & STEM** (`#robotics`) | Kỹ năng, hoạt động, kinh nghiệm giảng dạy và huấn luyện, bảng thành tích, mục tiêu |
+| **🤖 Robotics & STEM** (`#robotics`) | Kỹ năng, hoạt động, kinh nghiệm giảng dạy và huấn luyện, thành tích nhóm theo cấp cuộc thi (khu vực, thành phố, phường), mục tiêu |
 
 Mỗi lĩnh vực mở đầu bằng một khung tiêu đề riêng nên hai phần tách bạch. Link `#it` và `#robotics` dẫn thẳng tới từng phần.
 
@@ -34,7 +34,7 @@ Mỗi lĩnh vực mở đầu bằng một khung tiêu đề riêng nên hai ph�
 
 ## Giao diện
 
-- **Phong cách Notion:** biểu tượng và tiêu đề trang, đường kẻ dưới tiêu đề mục, khối callout nền xám, nhãn màu, thẻ gallery và bảng database; dùng đúng bảng màu sáng / tối của Notion và font hệ thống.
+- **Phong cách Notion:** biểu tượng và tiêu đề trang, đường kẻ dưới tiêu đề mục, khối callout nền xám, nhãn màu, thẻ gallery; dùng đúng bảng màu sáng / tối của Notion và font hệ thống.
 - **Gallery dự án:** mỗi thẻ có ảnh chụp giao diện thật (hoặc biểu tượng nếu chưa có ảnh), loại dự án và nhãn "Đang chạy trực tuyến" cho dự án có website.
 - **Trang chi tiết dự án** mở chồng lên trang chính như "peek" của Notion: ảnh bìa, thuộc tính (loại, trạng thái, website, mã nguồn, công nghệ) và danh sách chức năng. Đóng bằng nút ✕, phím Esc hoặc bấm ra ngoài; trên điện thoại trượt lên từ dưới.
 - **Logo công nghệ** cho nhãn kỹ năng và công nghệ (từ [Simple Icons](https://simpleicons.org/)); logo màu quá tối tự đổi theo màu chữ để đọc được ở cả hai chế độ.
