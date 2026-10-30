@@ -10,6 +10,15 @@ const TAG_ICONS = {
 
 export const projectIcon = (p) => TAG_ICONS[p.tag] || "📄";
 
+function Title({ p }) {
+  return (
+    <span className="n-card-title">
+      <span aria-hidden="true">{projectIcon(p)}</span> {p.title}
+    </span>
+  );
+}
+
+// With a screenshot the title sits on the image; without one it stays in the text below.
 function Cover({ p }) {
   if (!p.image) {
     return (
@@ -19,8 +28,11 @@ function Cover({ p }) {
     );
   }
   return (
-    <div className="n-card-cover">
+    <div className="n-card-cover n-card-cover-titled">
       <img src={`${import.meta.env.BASE_URL}${p.image}`} alt="" loading="lazy" width="1280" height="800" />
+      <div className="n-cover-overlay">
+        <Title p={p} />
+      </div>
     </div>
   );
 }
@@ -32,9 +44,7 @@ function ProjectCard({ p, onOpen }) {
     <>
       <Cover p={p} />
       <div className="n-card-content">
-        <span className="n-card-title">
-          <span aria-hidden="true">{projectIcon(p)}</span> {p.title}
-        </span>
+        {!p.image && <Title p={p} />}
         <span className="n-card-text">{p.desc}</span>
         <div className="n-tags">
           <span className="n-tag">{p.tag}</span>

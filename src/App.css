@@ -363,6 +363,23 @@ button.n-card:hover .n-card-cover img {
 .n-card-field .n-card-cover {
   aspect-ratio: 4 / 1;
 }
+/* Project name laid over the bottom of a screenshot, on a dark fade so white text stays readable. */
+.n-card-cover-titled {
+  position: relative;
+}
+.n-cover-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.45) 55%, transparent);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+.n-card-cover-titled .n-cover-overlay {
+  padding: 28px 12px 10px;
+}
+.n-card-cover-titled .n-card-title {
+  font-size: 16px;
+}
 .n-card-content {
   display: flex;
   flex-direction: column;
@@ -515,6 +532,16 @@ button.n-card:hover .n-card-cover img {
 .n-peek-body {
   padding: 0 64px 48px;
 }
+.n-peek-hero {
+  position: relative;
+}
+.n-peek-overlay {
+  padding: 80px 64px 24px;
+}
+.n-peek-overlay .n-peek-desc {
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.88);
+}
 .n-peek-icon {
   display: block;
   position: relative;
@@ -522,10 +549,23 @@ button.n-card:hover .n-card-cover img {
   font-size: 64px;
   line-height: 1;
 }
+.n-peek-overlay .n-peek-icon {
+  margin-top: 0;
+  font-size: 48px;
+}
 .n-peek-title {
-  margin: 12px 0 16px;
+  margin: 12px 0 6px;
   font-size: 32px;
   font-weight: 700;
+}
+.n-peek-desc {
+  margin-bottom: 18px;
+  font-size: 1.1em;
+  line-height: 1.55;
+  color: var(--text-dim);
+}
+.n-peek-hero + .n-peek-body {
+  padding-top: 24px;
 }
 .n-props {
   margin-bottom: 18px;
@@ -658,6 +698,15 @@ button.n-card:hover .n-card-cover img {
   }
   .n-peek-body {
     padding: 0 20px 32px;
+  }
+  .n-peek-overlay {
+    padding: 48px 20px 16px;
+  }
+  .n-peek-overlay .n-peek-title {
+    font-size: 24px;
+  }
+  .n-peek-overlay .n-peek-desc {
+    font-size: 14px;
   }
   .n-prop {
     grid-template-columns: 100px minmax(0, 1fr);
