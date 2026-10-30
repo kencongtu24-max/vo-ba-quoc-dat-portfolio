@@ -1,16 +1,36 @@
 export const roles = [
-  { key: "it", label: "Information Technology Student" },
-  { key: "robo", label: "Robotics Instructor & Coach" },
+  { key: "it", icon: "💻", label: "Information Technology Student", target: "it" },
+  { key: "robo", icon: "🤖", label: "Robotics Instructor & Competition Coach", target: "robotics" },
 ];
 
-export const bio =
-  "Mình là Võ Bá Quốc Đạt, sinh viên ngành Công nghệ thông tin tại Đại học Đông Á, đồng thời có niềm đam mê và kinh nghiệm trong lĩnh vực Robotics & STEM. Mình định hướng phát triển song song kỹ năng lập trình, phát triển sản phẩm công nghệ và Robotics. Mục tiêu là không ngừng học hỏi, tạo ra những sản phẩm thực tế và phát triển bản thân trong lĩnh vực công nghệ.";
+// Short intro shown under the name at the top of the page.
+export const headline =
+  "Sinh viên ngành Công nghệ Thông tin tại Trường Đại học Đông Á, có định hướng phát triển trong lĩnh vực Web & Software Development. Có khả năng tự xây dựng ứng dụng web từ khâu phân tích yêu cầu, thiết kế giao diện, lập trình đến triển khai thực tế. Bên cạnh đó, tham gia giảng dạy và huấn luyện đội tuyển Robotics, góp phần phát triển tư duy logic, kỹ năng lập trình và giải quyết vấn đề.";
 
 export const aboutInfo = [
-  { icon: "🎓", label: "Học vấn", value: "Đại học Đông Á – Đà Nẵng, ngành Công nghệ thông tin, Khóa K25" },
   { icon: "🎂", label: "Ngày sinh", value: "02/11/2004" },
   { icon: "📍", label: "Quê quán", value: "Hà Tĩnh" },
   { icon: "🏠", label: "Nơi ở hiện tại", value: "Đà Nẵng" },
+];
+
+export const education = [
+  { title: "Đại học Đông Á – Đà Nẵng", detail: "Ngành Công nghệ thông tin · Khóa K25" },
+];
+
+// Two fields shown as gallery cards; `target` is the section id each card jumps to.
+export const fields = [
+  {
+    icon: "💻",
+    title: "Information Technology",
+    desc: "Phát triển web và phần mềm: React, Node.js, Django, cơ sở dữ liệu, triển khai Docker và ứng dụng AI.",
+    target: "it",
+  },
+  {
+    icon: "🤖",
+    title: "Robotics & STEM",
+    desc: "Giảng dạy, huấn luyện đội tuyển: lắp ráp, lập trình, điều khiển robot và chiến thuật thi đấu.",
+    target: "robotics",
+  },
 ];
 
 export const itSkills = [
@@ -25,13 +45,13 @@ export const itSkills = [
   { cat: "Database", items: ["PostgreSQL", "MySQL", "SQL Server", "Qdrant"] },
   {
     cat: "DevOps",
-    items: ["Docker", "Docker Compose", "Nginx", "Caddy", "Cloudflare Tunnel", "Vercel", "Render", "GitHub Actions"],
+    items: ["Docker", "Nginx", "Caddy", "Cloudflare Tunnel", "Vercel", "Render", "GitHub Actions"],
   },
   { cat: "Testing", items: ["Playwright", "Node Test Runner", "Django Test"] },
-  { cat: "Tools", items: ["Git", "GitHub", "VS Code", "FFmpeg"] },
+  { cat: "Tools", items: ["Git", "GitHub", "FFmpeg"] },
   {
     cat: "AI",
-    items: ["Claude API", "OpenAI API", "RAG", "AI Agent", "Whisper", "VieNeu-TTS", "CosyVoice", "Claude", "ChatGPT", "NotebookLM", "Gemini"],
+    items: ["Claude API", "OpenAI API", "RAG", "AI Agent", "Whisper", "VieNeu-TTS", "CosyVoice"],
   },
 ];
 
@@ -177,7 +197,7 @@ export const itPersonalProjects = [
   { tag: "Nền tảng học tập", title: "EduLearn", desc: "Website cung cấp khóa học trực tuyến." },
   {
     tag: "Website giới thiệu",
-    title: "HeritageGo Hoi An",
+    title: "HeritageGo Hội An",
     repo: "", // link GitHub mã nguồn, để trống thì ẩn nút
     desc: "Hướng dẫn viên trực tuyến cho Làng gốm Thanh Hà và Làng rau Trà Quế — Công trình thanh niên Chuyển đổi số của Đoàn Thanh niên Trường Đại học Đông Á và Đoàn Thanh niên Phường Hội An Tây.",
     link: "https://huongdanvien.tuoitredaihocdonga.org.vn",
@@ -244,3 +264,27 @@ export const contacts = [
   { label: "GitHub", value: "Quốc Đạt", href: "https://github.com/kencongtu24-max", icon: "github" },
   { label: "Facebook", value: "Quốc Đạt", href: "https://web.facebook.com/w.daw.04/", icon: "facebook" },
 ];
+
+// Keyed by field: `it` and `robo` each render in their own part of the page.
+export const experience = {
+  robo: {
+    points: roboExperience,
+  },
+  it: {
+    points: [
+      "Tự xây dựng các ứng dụng web hoàn chỉnh từ thiết kế, frontend, backend đến triển khai: trợ lý AI, quản lý chi tiêu, quản lý dự án, quản lý sinh viên, quản lý trung tâm đào tạo.",
+      "Thực hiện HeritageGo Hội An — công trình thanh niên Chuyển đổi số, thuyết minh 5 ngôn ngữ cho hai làng nghề.",
+    ],
+  },
+};
+
+export const goals = {
+  it: {
+    tagline: "Build. Learn. Innovate.",
+    text: "Tập trung phát triển Web Development & Software Engineering, hướng đến trở thành một Software Developer chuyên nghiệp, luôn sẵn sàng khám phá công nghệ mới và tạo ra những giải pháp thông minh, hiệu quả và có giá trị.",
+  },
+  robo: {
+    tagline: "Design. Program. Compete.",
+    text: "Hướng đến xây dựng những robot thông minh, tối ưu và sáng tạo, đồng thời chia sẻ kiến thức và đồng hành cùng học sinh trong quá trình học tập, sáng tạo và chinh phục các cuộc thi Robotics.",
+  },
+};
