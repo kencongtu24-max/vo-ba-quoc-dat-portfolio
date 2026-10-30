@@ -1,8 +1,8 @@
 import { Callout, Heading } from "./Blocks.jsx";
 import { ICONS } from "./icons.jsx";
-import { aboutInfo, contacts, education, fields, headline, roles } from "../data.js";
+import { aboutInfo, contacts, education, headline, roles } from "../data.js";
 
-// Page header: portrait beside name, roles, intro and contacts; personal facts and the two fields below.
+// Page header: portrait beside name, roles, intro and contacts; personal facts in one row below.
 export default function Profile() {
   return (
     <>
@@ -51,21 +51,6 @@ export default function Profile() {
             {e.title}
             <span className="n-sub">{e.detail}</span>
           </Callout>
-        ))}
-      </div>
-
-      <Heading hint="Hai lĩnh vực mình theo đuổi song song">Lĩnh vực</Heading>
-      <div className="n-gallery n-gallery-fields">
-        {fields.map((f) => (
-          <a className="n-card n-card-field" key={f.title} href={`#${f.target}`}>
-            <div className="n-card-cover n-card-cover-emoji" aria-hidden="true">
-              {f.icon}
-            </div>
-            <div className="n-card-content">
-              <span className="n-card-title">{f.title}</span>
-              <span className="n-card-text">{f.desc}</span>
-            </div>
-          </a>
         ))}
       </div>
     </>

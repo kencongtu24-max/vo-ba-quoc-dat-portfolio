@@ -5,7 +5,7 @@ export const roles = [
 
 // Short intro shown under the name at the top of the page.
 export const headline =
-  "Sinh viên ngành Công nghệ Thông tin tại Trường Đại học Đông Á, có định hướng phát triển trong lĩnh vực Web & Software Development. Có khả năng tự xây dựng ứng dụng web từ khâu phân tích yêu cầu, thiết kế giao diện, lập trình đến triển khai thực tế. Bên cạnh đó, tham gia giảng dạy và huấn luyện đội tuyển Robotics, góp phần phát triển tư duy logic, kỹ năng lập trình và giải quyết vấn đề.";
+  "Sinh viên Công nghệ Thông tin tại Trường Đại học Đông Á, định hướng Web & Software Development. Tự xây dựng ứng dụng web từ phân tích yêu cầu, thiết kế, lập trình đến triển khai thực tế; đồng thời giảng dạy và huấn luyện đội tuyển Robotics.";
 
 export const aboutInfo = [
   { icon: "🎂", label: "Ngày sinh", value: "02/11/2004" },
@@ -15,22 +15,6 @@ export const aboutInfo = [
 
 export const education = [
   { title: "Đại học Đông Á – Đà Nẵng", detail: "Ngành Công nghệ thông tin · Khóa K25" },
-];
-
-// Two fields shown as gallery cards; `target` is the section id each card jumps to.
-export const fields = [
-  {
-    icon: "💻",
-    title: "Information Technology",
-    desc: "Phát triển web và phần mềm: React, Node.js, Django, cơ sở dữ liệu, triển khai Docker và ứng dụng AI.",
-    target: "it",
-  },
-  {
-    icon: "🤖",
-    title: "Robotics & STEM",
-    desc: "Giảng dạy, huấn luyện đội tuyển: lắp ráp, lập trình, điều khiển robot và chiến thuật thi đấu.",
-    target: "robotics",
-  },
 ];
 
 export const itSkills = [
