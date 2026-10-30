@@ -14,7 +14,6 @@ Toàn bộ nằm trên **một trang**, bố cục theo kiểu trang Notion (l�
 |---|---|
 | **Đầu trang** | Ảnh bên trái; bên phải là tên, hai vai trò (bấm để tới phần tương ứng), đoạn giới thiệu và liên hệ (Email, Điện thoại, GitHub, Facebook) |
 | **Thông tin** | Một hàng: ngày sinh, quê quán, nơi ở, học vấn |
-| **Lĩnh vực** | Hai thẻ IT và Robotics, bấm để tới phần tương ứng |
 | **💻 Information Technology** (`#it`) | Kỹ năng theo nhóm, kinh nghiệm, gallery dự án cá nhân / nhóm (bấm vào thẻ để mở trang chi tiết), mục tiêu |
 | **🤖 Robotics & STEM** (`#robotics`) | Kỹ năng, hoạt động, kinh nghiệm giảng dạy và huấn luyện, bảng thành tích, mục tiêu |
 
@@ -94,7 +93,7 @@ Mỗi dự án trong `itPersonalProjects` có các trường:
 
 Dự án có `features` mở được trang chi tiết và đứng đầu gallery; dự án chỉ có `tag`, `title`, `desc` hiện thẻ kèm nhãn "Đang cập nhật". Biểu tượng của dự án lấy theo `tag` (`TAG_ICONS` trong [`src/components/ProjectGallery.jsx`](src/components/ProjectGallery.jsx)).
 
-Các mục khác cũng nằm trong `data.js`: `headline` (đoạn giới thiệu ở đầu trang), `roles`, `aboutInfo`, `education`, `fields` (hai thẻ lĩnh vực), `contacts`, `achievements`... Riêng `experience` và `goals` chia theo khoá `it` / `robo`, mỗi khoá hiện trong phần của lĩnh vực đó.
+Các mục khác cũng nằm trong `data.js`: `headline` (đoạn giới thiệu ở đầu trang), `roles`, `aboutInfo`, `education`, `contacts`, `achievements`... Riêng `experience` và `goals` chia theo khoá `it` / `robo`, mỗi khoá hiện trong phần của lĩnh vực đó.
 
 **Thêm logo cho công nghệ mới:** thêm một dòng vào `RULES` trong [`src/techIcons.js`](src/techIcons.js), ví dụ `[/^redis/i, siRedis]` (nhớ import `siRedis` từ `simple-icons`). Công nghệ không có logo sẽ chỉ hiện chữ.
 

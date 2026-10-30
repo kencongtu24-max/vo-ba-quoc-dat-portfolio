@@ -125,7 +125,6 @@
   background: var(--bg-hover);
 }
 .n-headline {
-  max-width: 720px;
   margin: 16px 0 20px;
   font-size: 1.2em;
   line-height: 1.55;
@@ -310,9 +309,6 @@
   gap: 16px;
   margin-top: 12px;
 }
-.n-gallery-fields {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
 .n-gallery-3 {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
@@ -359,9 +355,6 @@ button.n-card:hover .n-card-cover img {
   display: grid;
   place-items: center;
   font-size: 48px;
-}
-.n-card-field .n-card-cover {
-  aspect-ratio: 4 / 1;
 }
 /* Project name laid over the bottom of a screenshot, on a dark fade so white text stays readable. */
 .n-card-cover-titled {
@@ -685,8 +678,7 @@ button.n-card:hover .n-card-cover img {
   .n-title {
     font-size: 32px;
   }
-  .n-grid-2,
-  .n-gallery-fields {
+  .n-grid-2 {
     grid-template-columns: 1fr;
   }
   .n-peek-backdrop {
