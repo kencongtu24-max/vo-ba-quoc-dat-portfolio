@@ -21,6 +21,21 @@ function ExternalLink({ href, children }) {
   );
 }
 
+// Icon, title and description; laid over the cover when the project has one.
+function PeekHeading({ project }) {
+  return (
+    <>
+      <span className="n-peek-icon" aria-hidden="true">
+        {projectIcon(project)}
+      </span>
+      <h2 id="peek-title" className="n-peek-title">
+        {project.title}
+      </h2>
+      <p className="n-peek-desc">{project.desc}</p>
+    </>
+  );
+}
+
 // Notion's "center peek": the project opens as a page over the main one.
 export default function ProjectPeek({ project, onClose }) {
   const closeRef = useRef(null);
@@ -69,21 +84,21 @@ export default function ProjectPeek({ project, onClose }) {
             </div>
             <div className="n-peek-scroll">
               {project.image && (
-                <img
-                  className="n-peek-cover"
-                  src={`${import.meta.env.BASE_URL}${project.image}`}
-                  alt={`Ảnh giao diện ${project.title}`}
-                  width="1280"
-                  height="800"
-                />
+                <div className="n-peek-hero">
+                  <img
+                    className="n-peek-cover"
+                    src={`${import.meta.env.BASE_URL}${project.image}`}
+                    alt={`Ảnh giao diện ${project.title}`}
+                    width="1280"
+                    height="800"
+                  />
+                  <div className="n-cover-overlay n-peek-overlay">
+                    <PeekHeading project={project} />
+                  </div>
+                </div>
               )}
               <div className="n-peek-body">
-                <span className="n-peek-icon" aria-hidden="true">
-                  {projectIcon(project)}
-                </span>
-                <h2 id="peek-title" className="n-peek-title">
-                  {project.title}
-                </h2>
+                {!project.image && <PeekHeading project={project} />}
 
                 <div className="n-props">
                   <Property label="Loại">
@@ -120,7 +135,6 @@ export default function ProjectPeek({ project, onClose }) {
                   </Property>
                 </div>
 
-                <p className="n-text">{project.desc}</p>
                 <h3 className="n-subheading">Chức năng</h3>
                 <ul className="n-bullets">
                   {project.features.map((f) => (
